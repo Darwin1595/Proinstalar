@@ -221,3 +221,22 @@ function mostrarToast(msg, tipo) {
 // ============================================
 renderProductos();
 actualizarCarrito();
+// Función para cerrar el modal de éxito y restablecer la vista
+function cerrarModal() {
+  // 1. Oculta el modal de éxito de la pantalla
+  const modal = document.getElementById('modal-exito');
+  if (modal) {
+    modal.style.display = 'none'; // o modal.classList.remove('active') según uses clases
+  }
+
+  // 2. Opcional: Limpia los campos del formulario para que queden vacíos de nuevo
+  const formulario = document.getElementById('form-servicio');
+  if (formulario) {
+    // Si tienes inputs individuales:
+    document.getElementById('gas-nombre').value = '';
+    document.getElementById('gas-tel').value = '';
+    document.getElementById('gas-dir').value = '';
+    document.getElementById('gas-tipo').value = '';
+    document.getElementById('gas-comentarios').value = '';
+  }
+}
