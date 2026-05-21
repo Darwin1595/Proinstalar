@@ -9,18 +9,15 @@
 </head>
 <body>
 
-<!-- BARRA SUPERIOR -->
 <div class="top-bar">
   <span>📧 proinstalar@gmail.com</span>
   <span>📞 310 123 4567</span>
 </div>
 
-<!-- ENCABEZADO / NAVEGACIÓN -->
 <header>
- <div class="brand" onclick="showPage('inicio')">
-  
-  <img src="imagenes/Logo1.png" alt="Proinstalar Banner" class="brand-banner">
-</div>
+  <div class="brand" onclick="showPage('inicio')">
+    <img src="imagenes/Logo1.png" alt="Proinstalar Banner" class="brand-banner">
+  </div>
   <nav>
     <a onclick="showPage('inicio')"    id="nav-inicio"    class="active">Inicio</a>
     <a onclick="showPage('catalogo')"  id="nav-catalogo">Catálogo</a>
@@ -36,7 +33,6 @@
   </div>
 </header>
 
-<!-- ====== INICIO ====== -->
 <div class="page active" id="page-inicio">
   <div class="hero">
     <h1>Todo para tu hogar en un solo lugar</h1>
@@ -50,7 +46,7 @@
   <div class="contacto-pill">
     <div><span>Teléfono</span><strong>310 123 4567</strong></div>
     <div class="divider"></div>
-    <div><span>Ubicación</span><strong>Ver en mapa</strong></div>
+    <div onclick="showPage('contacto')" style="cursor: pointer;"><span>Ubicación</span><strong>Ver en mapa 📍</strong></div>
     <div class="divider"></div>
     <div><span>WhatsApp</span><strong>Escríbenos</strong></div>
   </div>
@@ -79,7 +75,6 @@
   </div>
 </div>
 
-<!-- ====== CATÁLOGO ====== -->
 <div class="page" id="page-catalogo">
   <div class="banner"><h1>Catálogo de Productos</h1></div>
   <div class="barra-filtros">
@@ -94,7 +89,6 @@
   <div class="grid-3 contenedor" id="productos-grid"></div>
 </div>
 
-<!-- ====== SERVICIOS ====== -->
 <div class="page" id="page-servicios">
   <div class="banner">
     <h1>Servicios de Gas Profesionales</h1>
@@ -102,27 +96,27 @@
   </div>
   <div class="contenedor" style="padding:50px 40px">
     <div class="fila-btns" style="justify-content:center; margin-bottom:50px">
-      <span class="chip">✅ Seguridad</span>
-      <span class="chip">🏅 Certificación</span>
-      <span class="chip">⚡ Rapidez</span>
-      <span class="chip">🌟 Experiencia</span>
+      <span class="chip">Seguridad</span>
+      <span class="chip">Certificación</span>
+      <span class="chip">Rapidez</span>
+      <span class="chip">Experiencia</span>
     </div>
     <div class="titulo-seccion"><h2>Nuestros Servicios</h2></div>
     <div class="grid-3" style="margin-bottom:40px">
       <div class="card-amarillo">
-        <div class="icono">🔧</div><h3>Instalación de Gas</h3>
+        <div class="icono"></div><h3>Instalación de Gas</h3>
         <p>Para hogares y empresas con todas las medidas de seguridad.</p>
         <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
         <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
       </div>
       <div class="card-amarillo">
-        <div class="icono">⚙️</div><h3>Mantenimiento</h3>
+        <div class="icono"></div><h3>Mantenimiento</h3>
         <p>Preventivo y correctivo con las medidas de seguridad requeridas.</p>
         <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
         <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
       </div>
       <div class="card-amarillo">
-        <div class="icono">🛢️</div><h3>Venta de Cilindros</h3>
+        <div class="icono"></div><h3>Venta de Cilindros</h3>
         <p>Cilindros certificados para hogares y empresas.</p>
         <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
         <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
@@ -132,7 +126,6 @@
       <button class="btn-azul" onclick="scrollToForm()">Solicitar Servicio</button>
     </div>
 
-    <!-- FORMULARIO -->
     <div class="formulario" id="form-servicio">
       <h2>Solicitar Servicio de Gas</h2>
       <p class="subtitulo">Completa el formulario y te contactamos pronto</p>
@@ -156,7 +149,7 @@
     </div>
 
     <div class="alerta">
-      <h3>⚠️ Recomendaciones de Seguridad</h3>
+      <h3>Recomendaciones de Seguridad</h3>
       <ul>
         <li>Realiza revisiones periódicas de tu instalación</li>
         <li>Mantén ventiladas las áreas donde se usa gas</li>
@@ -167,18 +160,17 @@
   </div>
 </div>
 
-<!-- ====== EMPRESA ====== -->
 <div class="page" id="page-empresa">
   <div class="banner"><h1>Sobre la empresa</h1><p>Conoce nuestra historia y compromiso</p></div>
   <div class="contenedor" style="padding:50px 40px">
     <div class="caja-lila" style="margin-bottom:30px">
-      <h3 style="font-weight:900; margin-bottom:14px">⚡ Nuestra Historia</h3>
+      <h3 style="font-weight:900; margin-bottom:14px">Nuestra Historia</h3>
       <p>Proinstalar nació hace más de 20 años con el objetivo de ofrecer productos de calidad y servicios confiables para hogares y negocios en nuestra comunidad.</p>
       <p style="margin-top:12px">Lo que comenzó como una pequeña ferretería familiar creció hasta ser un referente del sector, ampliando servicios a instalación y mantenimiento de gas.</p>
     </div>
     <div class="grid-2" style="margin-bottom:40px">
-      <div class="card-crema"><h3>⚡ Misión</h3><p>Brindar productos y servicios confiables garantizando la satisfacción del cliente con calidad y precios justos.</p></div>
-      <div class="card-crema"><h3>🌟 Visión</h3><p>Ser la primera opción de ferretería y servicios de gas reconocida por excelencia y confianza.</p></div>
+      <div class="card-crema"><h3> Misión</h3><p>Brindar productos y servicios confiables garantizando la satisfacción del cliente con calidad y precios justos.</p></div>
+      <div class="card-crema"><h3> Visión</h3><p>Ser la primera opción de ferretería y servicios de gas reconocida por excelencia y confianza.</p></div>
     </div>
     <div class="titulo-seccion"><h2>Nuestros Valores</h2></div>
     <div class="fila-btns" style="justify-content:center; margin-bottom:40px">
@@ -193,15 +185,13 @@
   </div>
 </div>
 
-<!-- ====== CONTACTO ====== -->
-<div class="page" id="page-contacto">
+<div class="page" id="page-contacto"> 
   <div class="banner">
     <h1>Contacto</h1>
     <p>Contáctanos por el medio que prefieras</p>
   </div>
   
   <div class="contenedor" style="padding:50px 40px">
-    
     <div class="mapa-contenedor">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9248446702674!2d-74.1126133!3d4.611217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99465cd4843d%3A0xceca9fd25da3053e!2sAc.%203%20%2339-6%2C%20Puente%20Aranda%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1716240000000!5m2!1ses!2sco" 
@@ -213,6 +203,7 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
+    
     <h3 style="font-weight:900; margin-bottom:16px">Preguntas Frecuentes</h3>
     <div class="faq"><h4>¿Hacen entregas a domicilio?</h4><p>Sí, en la zona metropolitana. Pedidos sobre $200.000 tienen envío gratis.</p></div>
     <div class="faq"><h4>¿Tienen servicio de asesoría?</h4><p>Sí, nuestro personal te asesora en la elección de productos y proyectos.</p></div>
@@ -220,7 +211,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
@@ -237,9 +227,9 @@
     </div>
     <div>
       <h5>Contacto</h5>
-      <p>📞 310 123 4567</p>
-      <p>📧 proinstalar@gmail.com</p>
-      <p>📍 Av. Principal 123</p>
+      <p> 310 123 4567</p>
+      <p>proinstalar@gmail.com</p>
+      <p>Av. Principal 123</p>
     </div>
     <div>
       <h5>Horarios</h5>
@@ -250,7 +240,6 @@
   <div class="footer-bottom">© 2026 Proinstalar. Todos los derechos reservados.</div>
 </footer>
 
-<!-- CARRITO (panel lateral) -->
 <div class="carrito-overlay" id="carrito-overlay" onclick="cerrarCarritoFuera(event)">
   <div class="carrito-panel">
     <div class="carrito-header">
@@ -262,10 +251,8 @@
   </div>
 </div>
 
-<!-- TOAST (notificación) -->
 <div class="toast" id="toast"></div>
 
-<!-- MODAL ÉXITO -->
 <div class="modal-overlay" id="modal-exito">
   <div class="modal-box">
     <div style="font-size:3rem">✅</div>
@@ -274,17 +261,7 @@
     <button class="btn-azul" onclick="cerrarModal()">Aceptar</button>
   </div>
 </div>
-<div class="mapa-contenedor">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9248446702674!2d-74.1126133!3d4.611217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99465cd4843d%3A0xceca9fd25da3053e!2sAc.%203%20%2339-6%2C%20Puente%20Aranda%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1716240000000!5m2!1ses!2sco" 
-    width="100%" 
-    height="350" 
-    style="border:0; border-radius: 14px;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+
 <script src="script.js"></script>
 </body>
 </html>
