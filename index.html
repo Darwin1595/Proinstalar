@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proinstalar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- BARRA SUPERIOR -->
+<div class="top-bar">
+  <span>📧 proinstalar@gmail.com</span>
+  <span>📞 310 123 4567</span>
+</div>
+
+<!-- ENCABEZADO / NAVEGACIÓN -->
+<header>
+ <div class="brand" onclick="showPage('inicio')">
+  
+  <img src="imagenes/Logo1.png" alt="Proinstalar Banner" class="brand-banner">
+</div>
+  <nav>
+    <a onclick="showPage('inicio')"    id="nav-inicio"    class="active">Inicio</a>
+    <a onclick="showPage('catalogo')"  id="nav-catalogo">Catálogo</a>
+    <a onclick="showPage('servicios')" id="nav-servicios">Servicios de Gas</a>
+    <a onclick="showPage('empresa')"   id="nav-empresa">Sobre la Empresa</a>
+    <a onclick="showPage('contacto')"  id="nav-contacto">Contacto</a>
+  </nav>
+  <div class="header-right">
+    <button class="btn-carrito" onclick="toggleCarrito()">
+      🛒 Carrito <span class="badge-num" id="carrito-count">0</span>
+    </button>
+    <button class="btn-amarillo" onclick="scrollToForm()">Solicitar Servicio</button>
+  </div>
+</header>
+
+<!-- ====== INICIO ====== -->
+<div class="page active" id="page-inicio">
+  <div class="hero">
+    <h1>Todo para tu hogar en un solo lugar</h1>
+    <p>Productos de ferretería y servicios de gas rápidos y seguros.</p>
+    <div class="fila-btns">
+      <button class="btn-azul"    onclick="showPage('catalogo')">Ver Productos</button>
+      <button class="btn-amarillo" onclick="scrollToForm()">Solicitar Servicio de Gas</button>
+    </div>
+  </div>
+
+  <div class="contacto-pill">
+    <div><span>Teléfono</span><strong>310 123 4567</strong></div>
+    <div class="divider"></div>
+    <div><span>Ubicación</span><strong>Ver en mapa</strong></div>
+    <div class="divider"></div>
+    <div><span>WhatsApp</span><strong>Escríbenos</strong></div>
+  </div>
+
+  <div class="titulo-seccion">
+    <h2>Nuestros Servicios de Gas</h2>
+    <p>Instalación, mantenimiento y venta de cilindros con personal certificado</p>
+  </div>
+  <div class="grid-3 contenedor">
+    <div class="card-amarillo"><div class="icono">🏠</div><h3>Instalación Profesional</h3><p>Personal certificado con garantía de servicio</p></div>
+    <div class="card-amarillo"><div class="icono">🛡️</div><h3>Seguridad Garantizada</h3><p>Cumplimos todas las normativas de seguridad</p></div>
+    <div class="card-amarillo"><div class="icono">🚚</div><h3>Servicio Rápido</h3><p>Atención inmediata y entrega a domicilio</p></div>
+  </div>
+  <div style="text-align:center; padding: 0 0 50px">
+    <button class="btn-azul" onclick="showPage('servicios')">Ver todos los servicios</button>
+  </div>
+
+  <div class="seccion-gris">
+    <div class="titulo-seccion"><h2>Catálogo de Productos</h2><p>Todo lo que necesitas para tu hogar y construcción</p></div>
+    <div class="fila-btns" style="justify-content:center; margin-bottom:24px">
+      <button class="btn-azul" onclick="filtrarYIr('Herramientas')">🔧 Herramientas</button>
+      <button class="btn-azul" onclick="filtrarYIr('Pinturas')">🎨 Pinturas</button>
+      <button class="btn-azul" onclick="filtrarYIr('Gas')">🔥 Gas</button>
+    </div>
+    <div style="text-align:center"><button class="btn-amarillo" onclick="showPage('catalogo')">Ver Catálogo Completo</button></div>
+  </div>
+</div>
+
+<!-- ====== CATÁLOGO ====== -->
+<div class="page" id="page-catalogo">
+  <div class="banner"><h1>Catálogo de Productos</h1></div>
+  <div class="barra-filtros">
+    <input type="text" id="buscar-input" placeholder="🔍 Buscar producto..." oninput="renderProductos()">
+    <div class="filtros">
+      <button class="filtro activo" onclick="setFiltro('Todos',this)">Todos</button>
+      <button class="filtro" onclick="setFiltro('Herramientas',this)">Herramientas</button>
+      <button class="filtro" onclick="setFiltro('Pinturas',this)">Pinturas</button>
+      <button class="filtro" onclick="setFiltro('Gas',this)">Gas</button>
+    </div>
+  </div>
+  <div class="grid-3 contenedor" id="productos-grid"></div>
+</div>
+
+<!-- ====== SERVICIOS ====== -->
+<div class="page" id="page-servicios">
+  <div class="banner">
+    <h1>Servicios de Gas Profesionales</h1>
+    <p>Instalación, mantenimiento y venta de cilindros con personal certificado</p>
+  </div>
+  <div class="contenedor" style="padding:50px 40px">
+    <div class="fila-btns" style="justify-content:center; margin-bottom:50px">
+      <span class="chip">✅ Seguridad</span>
+      <span class="chip">🏅 Certificación</span>
+      <span class="chip">⚡ Rapidez</span>
+      <span class="chip">🌟 Experiencia</span>
+    </div>
+    <div class="titulo-seccion"><h2>Nuestros Servicios</h2></div>
+    <div class="grid-3" style="margin-bottom:40px">
+      <div class="card-amarillo">
+        <div class="icono">🔧</div><h3>Instalación de Gas</h3>
+        <p>Para hogares y empresas con todas las medidas de seguridad.</p>
+        <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
+        <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
+      </div>
+      <div class="card-amarillo">
+        <div class="icono">⚙️</div><h3>Mantenimiento</h3>
+        <p>Preventivo y correctivo con las medidas de seguridad requeridas.</p>
+        <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
+        <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
+      </div>
+      <div class="card-amarillo">
+        <div class="icono">🛢️</div><h3>Venta de Cilindros</h3>
+        <p>Cilindros certificados para hogares y empresas.</p>
+        <ul><li>Personal certificado</li><li>Garantía de servicio</li><li>Inspección incluida</li></ul>
+        <button class="btn-link" onclick="scrollToForm()">Solicitar servicio →</button>
+      </div>
+    </div>
+    <div style="text-align:center; margin-bottom:50px">
+      <button class="btn-azul" onclick="scrollToForm()">Solicitar Servicio</button>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="formulario" id="form-servicio">
+      <h2>Solicitar Servicio de Gas</h2>
+      <p class="subtitulo">Completa el formulario y te contactamos pronto</p>
+      <div class="form-grid">
+        <div class="campo"><label>Nombre *</label><input id="gas-nombre" placeholder="Tu nombre completo" required></div>
+        <div class="campo"><label>Teléfono *</label><input id="gas-tel" type="tel" placeholder="Tu teléfono" required></div>
+        <div class="campo full"><label>Dirección *</label><input id="gas-dir" placeholder="Tu dirección" required></div>
+        <div class="campo full">
+          <label>Tipo de servicio *</label>
+          <select id="gas-tipo" required>
+            <option value="">Seleccionar...</option>
+            <option>Instalación de Gas</option>
+            <option>Mantenimiento</option>
+            <option>Venta de Cilindros</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo full"><label>Comentarios</label><textarea id="gas-comentarios" placeholder="Describe tu solicitud..."></textarea></div>
+      </div>
+      <button class="btn-azul" onclick="enviarSolicitudGas()">Enviar Solicitud</button>
+    </div>
+
+    <div class="alerta">
+      <h3>⚠️ Recomendaciones de Seguridad</h3>
+      <ul>
+        <li>Realiza revisiones periódicas de tu instalación</li>
+        <li>Mantén ventiladas las áreas donde se usa gas</li>
+        <li>No hagas instalaciones sin personal certificado</li>
+        <li>Ante olor a gas, cierra la llave y llama inmediatamente</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====== EMPRESA ====== -->
+<div class="page" id="page-empresa">
+  <div class="banner"><h1>Sobre la empresa</h1><p>Conoce nuestra historia y compromiso</p></div>
+  <div class="contenedor" style="padding:50px 40px">
+    <div class="caja-lila" style="margin-bottom:30px">
+      <h3 style="font-weight:900; margin-bottom:14px">⚡ Nuestra Historia</h3>
+      <p>Proinstalar nació hace más de 20 años con el objetivo de ofrecer productos de calidad y servicios confiables para hogares y negocios en nuestra comunidad.</p>
+      <p style="margin-top:12px">Lo que comenzó como una pequeña ferretería familiar creció hasta ser un referente del sector, ampliando servicios a instalación y mantenimiento de gas.</p>
+    </div>
+    <div class="grid-2" style="margin-bottom:40px">
+      <div class="card-crema"><h3>⚡ Misión</h3><p>Brindar productos y servicios confiables garantizando la satisfacción del cliente con calidad y precios justos.</p></div>
+      <div class="card-crema"><h3>🌟 Visión</h3><p>Ser la primera opción de ferretería y servicios de gas reconocida por excelencia y confianza.</p></div>
+    </div>
+    <div class="titulo-seccion"><h2>Nuestros Valores</h2></div>
+    <div class="fila-btns" style="justify-content:center; margin-bottom:40px">
+      <span class="chip">Confianza</span><span class="chip">Calidad</span><span class="chip">Experiencia</span><span class="chip">Atención al cliente</span>
+    </div>
+    <div class="grid-4">
+      <div class="stat"><div class="num">20+</div><div>Años de Experiencia</div></div>
+      <div class="stat"><div class="num">10.000+</div><div>Clientes Satisfechos</div></div>
+      <div class="stat"><div class="num">100+</div><div>Productos Disponibles</div></div>
+      <div class="stat"><div class="num">100%</div><div>Calidad del Servicio</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CONTACTO ====== -->
+<div class="page" id="page-contacto">
+  <div class="banner">
+    <h1>Contacto</h1>
+    <p>Contáctanos por el medio que prefieras</p>
+  </div>
+  
+  <div class="contenedor" style="padding:50px 40px">
+    
+    <div class="mapa-contenedor">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9248446702674!2d-74.1126133!3d4.611217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99465cd4843d%3A0xceca9fd25da3053e!2sAc.%203%20%2339-6%2C%20Puente%20Aranda%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1716240000000!5m2!1ses!2sco" 
+        width="100%" 
+        height="350" 
+        style="border:0; border-radius: 14px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <h3 style="font-weight:900; margin-bottom:16px">Preguntas Frecuentes</h3>
+    <div class="faq"><h4>¿Hacen entregas a domicilio?</h4><p>Sí, en la zona metropolitana. Pedidos sobre $200.000 tienen envío gratis.</p></div>
+    <div class="faq"><h4>¿Tienen servicio de asesoría?</h4><p>Sí, nuestro personal te asesora en la elección de productos y proyectos.</p></div>
+    <div class="faq"><h4>¿Cuánto toma una instalación de gas?</h4><p>Entre 1 hora para instalaciones residenciales estándar.</p></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-nombre">Proinstalar</div>
+      <p>Tu aliado en herramientas y servicios de gas.</p>
+      <div class="f-social"><a href="#">📷</a><a href="#">in</a><a href="#">✖</a></div>
+    </div>
+    <div>
+      <h5>Enlaces</h5>
+      <a onclick="showPage('inicio')">Inicio</a>
+      <a onclick="showPage('catalogo')">Catálogo</a>
+      <a onclick="showPage('servicios')">Servicios</a>
+      <a onclick="showPage('empresa')">Empresa</a>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <p>📞 310 123 4567</p>
+      <p>📧 proinstalar@gmail.com</p>
+      <p>📍 Av. Principal 123</p>
+    </div>
+    <div>
+      <h5>Horarios</h5>
+      <p>Lun–Vie: 8AM–7PM</p>
+      <p>Sáb: 9AM–5PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Proinstalar. Todos los derechos reservados.</div>
+</footer>
+
+<!-- CARRITO (panel lateral) -->
+<div class="carrito-overlay" id="carrito-overlay" onclick="cerrarCarritoFuera(event)">
+  <div class="carrito-panel">
+    <div class="carrito-header">
+      <h2>🛒 Tu Carrito</h2>
+      <button onclick="toggleCarrito()">✕</button>
+    </div>
+    <div id="carrito-items"></div>
+    <div id="carrito-resumen"></div>
+  </div>
+</div>
+
+<!-- TOAST (notificación) -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL ÉXITO -->
+<div class="modal-overlay" id="modal-exito">
+  <div class="modal-box">
+    <div style="font-size:3rem">✅</div>
+    <h3>¡Solicitud Enviada!</h3>
+    <p>Te contactaremos a la brevedad.</p>
+    <button class="btn-azul" onclick="cerrarModal()">Aceptar</button>
+  </div>
+</div>
+<div class="mapa-contenedor">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9248446702674!2d-74.1126133!3d4.611217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99465cd4843d%3A0xceca9fd25da3053e!2sAc.%203%20%2339-6%2C%20Puente%20Aranda%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1716240000000!5m2!1ses!2sco" 
+    width="100%" 
+    height="350" 
+    style="border:0; border-radius: 14px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
