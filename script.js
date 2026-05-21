@@ -137,7 +137,7 @@ function pedirPorWhatsApp() {
   const msg = encodeURIComponent(
     `Hola Proinstalar, quiero hacer un pedido:\n\n${items}\n\nSubtotal: $${total.toLocaleString('es-CO')}\nEnvío: $${envio.toLocaleString('es-CO')}\nTotal: $${(total + envio).toLocaleString('es-CO')}`
   );
-  window.open(`https://wa.me/573101234567?text=${msg}`, '_blank');
+  window.open(`https://wa.me/573223501454?text=${msg}`, '_blank');
 }
 
 function toggleCarrito() {
